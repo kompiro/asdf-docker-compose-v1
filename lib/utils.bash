@@ -2,9 +2,8 @@
 
 set -euo pipefail
 
-# TODO: Ensure this is the correct GitHub homepage where releases can be downloaded for docker-compose-v1.
 GH_REPO="https://github.com/docker/compose"
-TOOL_NAME="docker-compose-v1"
+TOOL_NAME="docker-compose"
 TOOL_TEST="docker-compose version"
 
 fail() {
@@ -31,8 +30,6 @@ list_github_tags() {
 }
 
 list_all_versions() {
-  # TODO: Adapt this. By default we simply list the tag names from GitHub releases.
-  # Change this function if docker-compose-v1 has other means of determining installable versions.
   list_github_tags
 }
 
