@@ -48,7 +48,7 @@ get_platform() {
     ;;
   esac
 
-  echo -n "$platform"
+  echo -n "$platform" | tr '[:upper:]' '[:lower:]'
 }
 
 msg() {
