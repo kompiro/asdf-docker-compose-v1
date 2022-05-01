@@ -69,7 +69,7 @@ get_arch() {
     ;;
   esac
 
-  echo -n $arch
+  echo -n $arch | tr '[:upper:]' '[:lower:]'
 }
 
 download_release() {
@@ -79,7 +79,7 @@ download_release() {
   platform=$(get_platform)
   arch=$(get_arch)
 
-  url="$GH_REPO/releases/download/${version}/docker-compose-${platform}-${arch}"
+  url="$GH_REPO/releases/download/v${version}/docker-compose-${platform}-${arch}"
 
   echo "* Downloading $TOOL_NAME release $version..."
   curl "${curl_opts[@]}" -o "$filename" -C - "$url" || fail "Could not download $url"
